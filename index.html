@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Canciones Más Escuchadas en 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+    <h1>Top 10 Canciones Más Escuchadas en 2024</h1>
+
+    <div class="explicit-selector">
+        <label for="explicit-filter">Mostrar:</label>
+        <select id="explicit-filter" onchange="setExplicitFilter(this.value)">
+            <option value="all">Todas</option>
+            <option value="yes">Explícitas</option>
+            <option value="no">No Explícitas</option>
+        </select>
+    </div>
+
+    <div class="sound-control">
+        <button id="toggle-sound" onclick="toggleSound()">🔊 Sonido Activado</button>
+    </div>
+
+    <div class="platform-buttons">
+        <button onclick="showTop10('general')"><i class="fas fa-chart-bar"></i> General</button>
+        <button onclick="showTop10('Spotify')"><i class="fab fa-spotify"></i> Spotify</button>
+        <button onclick="showTop10('YouTube')"><i class="fab fa-youtube"></i> YouTube</button>
+        <button onclick="showTop10('TikTok')"><i class="fab fa-tiktok"></i> TikTok</button>
+    </div>
+
+    <div id="chart-container">
+        <h2 id="platform-title">Top 10 Most Streamed Songs in 2024 (General)</h2>
+        <div id="chart"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.38/Tone.js"></script>
+
+    <audio id="applause_top1" src="464194__radiosescolaresba__aplausos-y-ovacion.mp3" preload="auto"></audio>
+    <audio id="applause_top8_10" src="468302__kriptonauta001__05aplausos.mp3" preload="auto"></audio>
+    <audio id="applause_default" src="170291__villaperros__aplauso00.mp3" preload="auto"></audio>
+
+</body>
+</html>

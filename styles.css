@@ -1,0 +1,151 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('desktop-wallpaper-stage-backgrounds-concert-anime.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+}
+
+h1 {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 8px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+}
+
+.platform-buttons {
+    margin: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+#chart-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#platform-title {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.spotify {
+    background-color: #1DB954;
+    color: #ffffff;
+}
+
+.youtube {
+    background-color: #FF0000;
+    color: #ffffff;
+}
+
+.tiktok {
+    background: linear-gradient(to right, #000000, #FF0050, #00F2EA);
+    color: #ffffff;
+}
+
+.general {
+    background-color: #555;
+    color: #ffffff;
+}
+
+.rank {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.spotify .rank {
+    background-color: #1DB954;
+}
+
+.youtube .rank {
+    background-color: #FF0000;
+}
+
+.tiktok .rank {
+    background-color: #FF0050;
+}
+
+.general .rank {
+    background-color: #555;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    left: 105%; /* Posiciona el tooltip a la derecha de la barra */
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.bar:hover .tooltip {
+    display: block;
+}
+
+#chart-container {
+    width: 80%; /* Ajusta este valor según tus necesidades */
+    max-width: 1000px; /* Ancho máximo para evitar que las barras ocupen toda la pantalla */
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo sutil para destacar el contenedor */
+    border-radius: 10px;
+    overflow: hidden; /* Asegura que nada se salga del contenedor */
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 0; /* Inicia en 0 para animación */
+    max-width: 100%; /* Limita el ancho de la barra al contenedor */
+    animation: grow 1s ease-out forwards;
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--final-width);
+    }
+}
